@@ -1,0 +1,70 @@
+{
+    "description": "on macbook change double click and hold fn to MEH hold",
+    "manipulators": [
+        {
+            "type": "basic",
+            "from": {
+                "modifiers": {
+                    "mandatory": [
+                        "fn"
+                    ]
+                }
+            },
+            "conditions": [
+                {
+                    "type": "variable_if",
+                    "name": "fn_double",
+                    "value": "1"
+                }
+            ],
+            "to": [
+                {
+                    "repeat": true,
+                    "modifiers": [
+                        "left_control",
+                        "left_alt",
+                        "left_shift"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basic",
+            "from": {
+                "modifiers": {
+                    "mandatory": [
+                        "fn"
+                    ]
+                }
+            },
+            "to": [
+                {
+                    "set_variable": {
+                        "name": "fn_double",
+                        "value": 0
+                    }
+                }
+            ],
+            "to_delayed_action": {
+                "to_if_invoked": [
+                    {
+                        "set_variable": {
+                            "name": "fn_double",
+                            "value": 0
+                        }
+                    }
+                ],
+                "to_if_canceled": [
+                    {
+                        "set_variable": {
+                            "name": "fn_double",
+                            "value": 0
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+},
+
+
